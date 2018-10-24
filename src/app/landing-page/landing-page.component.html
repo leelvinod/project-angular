@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    
+  
+   
+</head>
+
+<body>
+    
+    <!--
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button"  data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li><img width = "100px" src="../../assets/Logo.png"></li>
+          <li ><a routerLink="/">Home</a></li>
+          <li><a [routerLink]="['aboutus']">About Us</a></li>
+          <li><a [routerLink]="['contactus']">Contact Us</a></li>
+          
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['register']"><span class="glyphicon glyphicon-king"></span> Register</a></li>
+        <li><a [routerLink]="['login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+-->
+
+
+   
+        <div class=" abside borders navbar navbar-expand-lg abside navbar-light ftco_navbar bg-light ftco-navbar-light" >
+            <img width = "100px" src="../../assets/Logo.png">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+          </button>
+  
+          <div class="collapse navbar-collapse" id="ftco-nav">
+              <ul class="nav navbar-nav">
+                  
+                  <li ><a class = "hovernow" routerLink="/">Home</a></li>
+                  <li><a class = "hovernow" [routerLink]="['aboutus']">About Us</a></li>
+                  <li><a class = "hovernow" [routerLink]="['contactus']">Contact Us</a></li>
+               
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class = "hovernow" [routerLink]="['register']"><span class="glyphicon glyphicon-king"></span> Register</a></li>
+                <li><a class = "hovernow" [routerLink]="['login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                
+              </ul>
+          </div>
+        </div>
+    
+
+
+ <div>
+   <router-outlet></router-outlet>
+ </div>
+
+</body>
+</html>
+
+
+

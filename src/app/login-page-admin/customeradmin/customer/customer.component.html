@@ -1,0 +1,43 @@
+<div class="container">
+
+  <h3>Welcome</h3>
+  <table class="table">
+    <tr>
+      <th>Admin Name :</th>
+      <th>Admin123</th>
+    </tr>
+    <tr>
+      <th>Admin ID :</th>
+      <th>10012</th>
+    </tr>
+
+  </table>
+  <a [routerLink]="['../customercreate']">create</a>
+
+  <h1>Customer List </h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>govtID</th>
+        <th>Customer name</th>
+        <th>tel circle</th>
+        <th>vas</th>
+        <th>pending customers</th>
+        <th>cust type</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of customer">
+        <td>{{ c.govtID }}</td>
+        <td>{{ c.custName }}</td>
+        <td>{{ c.telecomCircle }}</td>
+        <td>{{ c.vas }}</td>
+        <td>{{ c.pbills }}</td>
+        <td>{{ c.custType }}</td>
+        <td><a routerLink="../customerdetail/{{c.govtID}}">Show Detail</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

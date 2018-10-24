@@ -1,0 +1,31 @@
+<div>
+    <h3>{{isUpdate?"Edit":"New"}}Customer</h3>
+
+        <form #f="ngForm" (ngSubmit)="saveCustomer()">
+          
+          <label for="fid">ID</label>
+          <input type="number" id="fid" name="fid" 
+          [(ngModel)]="customer.govtID" #fid=ngModel>
+      
+          <label for="fname">NAME</label>
+          <input type="text" id="fname" name="fname" 
+          [(ngModel)]="customer.custName" #fname=ngModel>
+            <br>
+          <label for="ftc">Telecom Circle</label>
+          <input type="text" id="ftc" name="ftc" 
+          [(ngModel)]="customer.telecomCircle" #ftc=ngModel>
+          <br>
+          <label for="fvas">VAS</label>
+          <input type="text" id="fvas" name="fvas" 
+          [(ngModel)]="customer.vas" #fvas=ngModel>
+          <br>
+          <label for="fct">Cust Type</label>
+          <input type="text" id="fct" name="fct" 
+          [(ngModel)]="customer.custType" #fct=ngModel>
+
+        
+          <input type="submit" value="Submit">
+        </form>
+  
+    
+  </div>

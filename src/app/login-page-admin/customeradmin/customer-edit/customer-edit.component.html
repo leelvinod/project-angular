@@ -1,0 +1,54 @@
+<div class="container">
+
+  <h1>{{ customer.id }}</h1>
+  <dl class="list">
+    <dt>Date</dt>
+    <dd>{{ customer.date }}</dd>
+    <dt>Amount</dt>
+    <dd>{{ customer.amount }}</dd>
+    <dt>Product</dt>
+    <dd>{{ customer.product}}</dd>
+    <dt>Status</dt>
+    <dd>{{ customer.status }}</dd>
+  </dl>
+
+
+  <h1>Pay Customer</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="updateCustomer(customer.id,customer)" #customerForm="ngForm">
+        
+          <div class="form-group">
+            <label for="name">Govt ID</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.govtID" name="govtID" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Customer Name</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.custName" name="custName" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Telecom Circle</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.telecomCircle" name="telecomCircle" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="name">VAS</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.vas" name="vas" required>
+          </div>
+            
+          <div class="form-group">
+           <label for="name">Customer Type</label>
+           <input type="text" class="form-control" [(ngModel)]="custType" name="custType" required>
+          </div>
+    
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!customerForm.form.valid">Pay Now</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>

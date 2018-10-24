@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+  
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    header{
+      background-color:cornsilk ;
+      font-size: 20px;
+      
+    }
+
+    .centerit{
+      align-content: center;
+      height : 45px;
+      font-size: 30px;
+      font-family: cursive;
+
+
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+
+<body>
+    <header>
+        <img width = "30px" src="data:image/jpeg;base64,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">
+      Telecom Management
+      
+    </header>
+    
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li class="active"><a [routerLink]="['homeadmin']">Home</a></li>
+          <li><a [routerLink]="['customeradmin']">Customer Admin</a></li>
+          <li><a [routerLink]="['csaadmin']">CSAAdmin</a></li>
+          
+      </ul>
+      
+      <!-- <ul class="nav navbar-nav navbar-right"> -->
+        <!-- <li><a [routerLink]="['register']"><span class="glyphicon glyphicon-king"></span> Register</a></li>
+        <li><a [routerLink]="['login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+      </ul> -->
+    </div>
+  </div>
+</nav>
+ <div>
+   <router-outlet></router-outlet>
+ </div>
+
+</body>
+</html>
+
+
+
+

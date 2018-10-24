@@ -1,0 +1,18 @@
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(6, 108, 167);
+}
+
+.pict{
+    height:5%;
+    width:90%;
+    margin-left: 5%;
+}
+
+.info{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: rgb(4, 66, 119);
+
+}
+  
