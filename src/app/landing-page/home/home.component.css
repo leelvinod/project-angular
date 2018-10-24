@@ -2,3 +2,26 @@
     size:100% 100%;
     background-image: url("../../../assets/networl.jpg");
 }
+
+i{
+    font-size: 60px;
+    color: rgb(233, 148, 37);
+}
+
+.container{
+    padding: 10px;
+    background-color: rgba(70, 70, 68, 0.514);
+    text-align: center;
+    color: azure;
+    border-radius: 15px;
+}
+
+.width25-divider{
+    border-color: brown;
+}
+
+html,body{
+    background-color: rgb(176, 193, 231);
+    width: 100%;
+    height: 100%;
+}
