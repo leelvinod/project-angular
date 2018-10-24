@@ -37,22 +37,22 @@ export class CustomerCreateComponent implements OnInit {
 
   saveCustomer()
   {
-    if(this.isUpdate)
-    {
-      this.ts.updateCustomer(this.customer).subscribe(data=>
-        {
-          this.router.navigate(['../customer32']);
-        })
-        alert("The data has been updated");
-    }
+    // if(this.isUpdate)
+    // {
+    //   this.ts.updateCustomer(this.customer).subscribe(data=>
+    //     {
+    //       this.router.navigate(['../customer32']);
+    //     })
+    //     alert("The data has been updated");
+    // }
   
-    else
-    {
+    // else
+    // {
       this.ts.saveCustomer(this.customer).subscribe(data=>
         {
-          this.router.navigate(['../customer32']);
+          this.router.navigateByUrl('loginadmin/customeradmin/customer32');
         })
-        alert("The data has been submitted");
+       
     }
   }
-}
+// }

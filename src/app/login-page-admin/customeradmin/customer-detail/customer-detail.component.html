@@ -49,8 +49,8 @@
 </div>
 <div class="row pay">
   <div class="col-md-12">
-    <a routerLink="../../customeredit/{{customer.govtID}}">create</a>
-    <a [routerLink]="['../customeredit', customer.govtID]" class="btn btn-success myButton">Edit</a>
+    <a routerLink="../../customeredit/{{customer.govtID}}" class="btn btn-success myButton">Edit</a>
+    <!-- <a [routerLink]="['../customeredit', customer.govtID]" class="btn btn-success myButton">Edit</a> -->
     <!-- <td><a routerLink="../customerdetail/{{c.govtID}}">Show Detail</a></td> -->
     <button class="btn btn-danger" type="button" (click)="deleteCustomer(customer.govtID)">DELETE</button>
   </div>

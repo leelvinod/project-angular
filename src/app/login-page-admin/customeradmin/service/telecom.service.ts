@@ -41,9 +41,9 @@ export class TelecomService {
   {
     return this.baseUrl;
   }
-  saveCustomer(customer:Customer):Observable<Customer>
+  saveCustomer(customer:Customer)
   {
-    return this.http.post(this.getBaseUrlForAdd(),JSON.stringify(customer),this.getJsonContentTypeHeader()).pipe(map(data=>data.json()));
+    return this.http.post(this.getBaseUrlForAdd(),JSON.stringify(customer),this.getJsonContentTypeHeader());
   }
 
 
@@ -83,11 +83,10 @@ export class TelecomService {
   {
     return this.baseUrl+"/edit";
   }
-  updateCustomer(customer:Customer):Observable<Customer>
+  updateCustomer(customer:Customer)
   {
     return this.http.put
-    (this.getBaseUrlForUpdateTicket(),JSON.stringify(customer),this.getJsonContentTypeHeader()).pipe
-    (map(data=>data.json()));
+    (this.getBaseUrlForUpdateTicket(),JSON.stringify(customer),this.getJsonContentTypeHeader());
   }
 
 
