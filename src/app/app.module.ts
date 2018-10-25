@@ -21,34 +21,56 @@ import { CustomerDetailComponent } from './login-page-admin/customeradmin/custom
 import { CustomerEditComponent } from './login-page-admin/customeradmin/customer-edit/customer-edit.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {CarouselModule} from 'ngx-bootstrap/carousel';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AgentComponent } from './login-page-admin/csaadmin/agent/agent.component';
+import { AgentCreateComponent } from './login-page-admin/csaadmin/agent-create/agent-create.component';
+//import { Agent } from './login-page-admin/csaadmin/agent-create/agent-create.component';
+
 
 
 const paths: Routes = [
-  {path:'', redirectTo:'landingpage/home',pathMatch:'full'},
-    { path: 'customeradmin', component:CustomeradminComponent},
-   { path: 'customercsa', component:CustomercsaComponent},
-  { path: 'homecsa', component:HomecsaComponent},
-  {path :'landingpage',component:LandingPageComponent, children:[
-  { path: 'home', component:HomeComponent},
-  { path: 'aboutus', component:AboutusComponent},
-  { path: 'contactus', component:ContactusComponent},
-  { path: 'login', component:LoginComponent},
-  {path:'register', component:RegisterComponent}
-  ]},
+  { path: '', redirectTo: 'landingpage/home', pathMatch: 'full' },
+  { path: 'customeradmin', component: CustomeradminComponent },
+  { path: 'customercsa', component: CustomercsaComponent },
+  { path: 'homecsa', component: HomecsaComponent },
+  //{path:'csaadmin',component:kliulh},
+  {
+    path: 'landingpage', component: LandingPageComponent, children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'aboutus', component: AboutusComponent },
+      { path: 'contactus', component: ContactusComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent }
+    ]
+  },
 
-  {path :'loginadmin',component:LoginPageAdminComponent , children:[
-    { path: 'homeadmin', component:HomeadminComponent},
-    { path: 'customeradmin', component:CustomeradminComponent, children:[
-      {path:'customer32',component:CustomerComponent},
-      {path:'customercreate',component:CustomerCreateComponent},
-      {path:'customeredit/:id',component:CustomerEditComponent},
-      {path:'customerdetail/:id',component:CustomerDetailComponent}
-    ]},
-    { path: 'csaadmin', component:CsaadminComponent}
-  ]},
-  {path:'logincsa',component:LoginPageCSAComponent}
+  {
+    path: 'loginadmin', component: LoginPageAdminComponent, children: [
+      { path: 'homeadmin', component: HomeadminComponent },
+      {
+        path: 'customeradmin', component: CustomeradminComponent, children: [
+          { path: 'customer32', component: CustomerComponent },
+          { path: 'customercreate', component: CustomerCreateComponent },
+          { path: 'customeredit/:id', component: CustomerEditComponent },
+          { path: 'customerdetail/:id', component: CustomerDetailComponent }
+        ]
+      },
+      {
+        path: 'csaadmin', component: CsaadminComponent, children: [
+          { path: 'agent', component: AgentComponent },
+          { path: 'agent-create', component: AgentCreateComponent }
+
+        ]
+
+      }
+    ]
+  },
+
+
+
+  { path: 'logincsa', component: LoginPageCSAComponent }
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,16 +90,16 @@ const paths: Routes = [
     CustomerComponent,
     CustomerCreateComponent,
     CustomerDetailComponent,
-    CustomerEditComponent
-    
-
+    CustomerEditComponent,
+    AgentCreateComponent,
+    AgentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(paths),
-    
+
     CarouselModule.forRoot()
 
   ],

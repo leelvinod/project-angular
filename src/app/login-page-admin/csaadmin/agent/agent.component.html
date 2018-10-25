@@ -1,0 +1,52 @@
+<div class="container">
+  <h3>WELCOME TO THE CSA PAGE</h3>
+  <table class="table">
+    <tr>
+      <th>ADMIN : JOHNNY</th>
+      <th>TELECOM CIRCLE:123</th>
+    </tr>
+    <tr>
+      <th>ADMIN ID :GIU756U58</th>
+      <th>CONTACT DETAILS:575754648</th>
+    </tr>
+
+  </table>
+  <a [routerLink]="['../agent-create']">CLICK HERE TO CREATE A NEW CSA</a>
+
+  <h1>CSA List </h1>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>CSA NAME</th>
+        <th>LOCATION</th>
+
+
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+
+      <tr *ngFor="let c of customer">
+        <td>{{ c.id}}</td>
+        <td>{{ c.csaName }}</td>
+        <td>{{ c.location }}</td>
+
+
+        <td>
+
+
+          <!--a routerLink="/agent-detail/{{c.id}}">Show Detail</a-->
+          <button class="btn btn-danger btn-md" type="button" (click)="deleteCustomer(c.id)">DELETE CUSTOMER</button>
+        </td>
+
+      </tr>
+
+
+    </tbody>
+  </table>
+
+
+</div>
