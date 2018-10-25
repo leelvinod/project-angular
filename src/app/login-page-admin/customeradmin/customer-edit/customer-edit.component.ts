@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Customer } from '../model/customer';
+import { TelecomService } from '../service/telecom.service';
 
 @Component({
   selector: 'app-customer-edit',
@@ -9,16 +11,33 @@ import { Http } from '@angular/http';
 })
 export class CustomerEditComponent implements OnInit {
 
-  amt=0;
-  card;
-  customer = {};
-  defaultURL = 'http://localhost:8084/cust/edit';
-  constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
+
+  customer:Customer;
+ // isUpdate:boolean;
+  constructor(private ts:TelecomService,private ar:ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
-    this.getCustomer(this.route.snapshot.params['id']);
-  }
 
+    console.log("pooo");
+    this.customer=new Customer();
+
+    this.ar.params.subscribe(params=>
+     {
+        let tid=params['id'];
+        if(tid){
+        console.log("BOOOOOOOOOOOOOOOOOOOOOOOOOOO"+tid);
+        this.ts.getById(tid).subscribe(data=>
+          {this.customer=data});
+        }
+        else{
+          console.log("No IDDDDD");
+        }
+     }
+    );    
+
+   // this.getCustomer(this.route.snapshot.params['id']);
+  }
+/*
   getCustomer(id) {
     this.http.get(this.defaultURL + id).subscribe(data => {
       this.customer = data;
@@ -28,12 +47,31 @@ export class CustomerEditComponent implements OnInit {
   updateCustomer(id, data) {
     this.http.put(this.defaultURL + id, data)
       .subscribe(res => {
-          this.router.navigate(['/customer']);
+          this.router.navigateByUrl('/customer');
         }, (err) => {
           console.log(err);
         }
       );
     alert("payment successful");  
   }
+*/
+saveCustomer()
+  {
+   
+      this.ts.updateCustomer(this.customer).subscribe(
+        (data)=>
+        {
+          this.router.navigateByUrl('loginadmin/customeradmin/customer32');
+        });
+    }
+  
+   /* else
+    {
+      this.ts.saveCustomer(this.customer).subscribe(data=>
+        {
+          this.router.navigate(['/customer']);
+        })
+    }
+  }*/
 
 }

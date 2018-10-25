@@ -32,7 +32,7 @@ export class CustomerDetailComponent implements OnInit {
       {
         if(resp.ok)
         {
-          this.router.navigateByUrl("/?opt=d&id="+this.customer.govtID);
+          this.router.navigateByUrl('loginadmin/customeradmin/customer32');
         }
       }
     );
